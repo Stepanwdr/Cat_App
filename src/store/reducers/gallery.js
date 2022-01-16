@@ -16,21 +16,21 @@ export default function reducer(state=initialState,action) {
         case GET_CATS_GALLERY_BY_CATEGORY_REQUEST: {
             return {
                 ...state,
-                categoryStatus:"request"
+               galleryStatus:"request"
             }
         }
         case GET_CATS_GALLERY_BY_CATEGORY_SUCCESS: {
             const {data}=action.payload
             return {
                 ...state,
-                categoryStatus:"success",
+                galleryStatus:"success",
                 gallery:data
             }
         }
         case GET_CATS_GALLERY_BY_CATEGORY_FAIL: {
             return {
                 ...state,
-                categoryStatus:"fail"
+                galleryStatus:"fail"
             }
         }
 

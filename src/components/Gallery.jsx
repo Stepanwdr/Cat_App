@@ -11,7 +11,6 @@ const Gallery = () => {
     const {gallery, galleryStatus} = useSelector(state => state.gallery)
     const dispatch = useDispatch()
     const [page, setPage] = useState()
-    const [currentPage, setCurrentPage] = useState()
     const [limit, setLimit] = useState(10)
     let {catId}=useParams()
     const handleClick = async () => {
@@ -29,7 +28,6 @@ const Gallery = () => {
             {gallery.map(img => (<Image key={img.id} src={img.url}/>))
             }
             <GalleryControl>
-
                 <Button onClick={handleClick}>{gallery.length ? "Load More" : "Load Gallery"}</Button>
             </GalleryControl>
         </GalleryContainer>
@@ -70,8 +68,10 @@ cursor:pointer;
 const PreLoader = styled.div`
 display: flex;
 padding: 10px;
-text-align: center;
+justify-content: center;
 font-size: 18px;
-color:${lightThemeColor}
+color:${darkThemeColor};
+background-color:${lightThemeColor};
+border-radius: 20px;
 `
 export default Gallery;
